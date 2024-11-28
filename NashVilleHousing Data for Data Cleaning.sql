@@ -1,7 +1,7 @@
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville                 
+SELECT * FROM w3school.dbo.Nashville;                 
 
 
 
@@ -10,20 +10,20 @@ SELECT * FROM w3school.dbo.Nashville
 
 SELECT ParcelID, PropertyAddress, OwnerName,          
 SaleDate, OwnerAddress, SoldAsVacant 
-FROM [w3school].[dbo].[Nashville] 
+FROM [w3school].[dbo].[Nashville]; 
 
 
 
 
 SELECT * FROM w3school.dbo.Nashville 
-WHERE OwnerAddress is NULL
+WHERE OwnerAddress is NULL;
 
 
 
 -- Here i converted and viewed the SaleDate Column which is in a Date/Time Format to Date format
 
 SELECT CONVERT(DATE, SaleDate) AS SaleDateOnly        
-FROM w3school.dbo.Nashville
+FROM w3school.dbo.Nashville;
 
 
 
@@ -39,13 +39,13 @@ ADD SaleDateOnly DATE;
 -- Here i populaed the newly created SaleDateOnly with the Date
 
 UPDATE w3school.dbo.Nashville             
-SET SaleDateOnly = CONVERT(DATE, SaleDate)
+SET SaleDateOnly = CONVERT(DATE, SaleDate);
 
 
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
 
 
 
@@ -54,7 +54,7 @@ SELECT * FROM w3school.dbo.Nashville
 
 SELECT * FROM w3school.dbo.Nashville				   		
 WHERE ParcelID is not NULL 
-AND PropertyAddress is NULL
+AND PropertyAddress is NULL;
 
 
 /*
@@ -76,7 +76,7 @@ AND p2.PropertyAddress IS NOT NULL;
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
 
 
 
@@ -90,7 +90,7 @@ SELECT
 	CHARINDEX(',', PropertyAddress) + 1, 
 	LEN(PropertyAddress)) AS PropertyCity
 FROM 
-    w3school.dbo.Nashville
+    w3school.dbo.Nashville;
 
 
 
@@ -105,7 +105,7 @@ ADD PropertyAddressOnly varchar(255), PropertyCity varchar(255);
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
 
 
 
@@ -121,12 +121,12 @@ SET PropertyAddressOnly = SUBSTRING(PropertyAddress, 1,
 	CHARINDEX(',', PropertyAddress) + 1, 
 	LEN(PropertyAddress))
 WHERE 
-    PropertyAddress is not NULL
+    PropertyAddress is not NULL;
 
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
 
 
 
@@ -151,7 +151,7 @@ OwnerCity,
 		CHARINDEX(',', OwnerAddress) + 1) + 1, 
 	LEN(OwnerAddress)) AS OwnerState
 FROM 
-    w3school.dbo.Nashville
+    w3school.dbo.Nashville;
 
 
 
@@ -166,7 +166,7 @@ ADD OwnerAddressOnly varchar(255), OwnerCity varchar(255), OwnerState varchar(25
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
 
 
 
@@ -188,13 +188,13 @@ SET OwnerAddressOnly = SUBSTRING(OwnerAddress, 1,
 		CHARINDEX(',', OwnerAddress) + 1) + 1, 
 	LEN(OwnerAddress))
 WHERE 
-    PropertyAddress is not NULL
+    PropertyAddress is not NULL;
 
 
 
  -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
 
 
 
@@ -206,7 +206,7 @@ column that is N instead of No and Y instead of Yes
 
 SELECT SoldAsVacant, COUNT([UniqueID ]) FROM w3school.dbo.Nashville
 WHERE SoldAsVacant IN ('N','Y','YES','NO')
-GROUP BY SoldAsVacant
+GROUP BY SoldAsVacant;
 
 
 
@@ -227,10 +227,10 @@ WHERE SoldAsVacant IN ('N', 'Y');
 
 SELECT SoldAsVacant, COUNT([UniqueID ]) FROM w3school.dbo.Nashville
 WHERE SoldAsVacant IN ('N','Y','YES','NO')
-GROUP BY SoldAsVacant
+GROUP BY SoldAsVacant;
 
 
 
 -- View the entire Table
 
-SELECT * FROM w3school.dbo.Nashville    
+SELECT * FROM w3school.dbo.Nashville;    
